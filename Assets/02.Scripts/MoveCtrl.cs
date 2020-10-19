@@ -21,7 +21,7 @@ public class MoveCtrl: MonoBehaviour
     private Transform camTr;
     private int nextIdx = 1;
 
-
+    public static bool isStopped = false;
     void Start()
     {
         tr = GetComponent<Transform>();
@@ -35,6 +35,7 @@ public class MoveCtrl: MonoBehaviour
     }
     void Update()
     {
+        if (isStopped) return;
         switch (moveType)
         {
             case MoveType.WAY_POINT:
